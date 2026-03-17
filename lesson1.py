@@ -1,6 +1,8 @@
-['123-456-7890', '123.456.7890', '(123) 456-7890', '+1234567890', '1234567890'].
+import time
 
-def format_phone_number(number):
-    number.replace('-', '')
-
-formatted_numbers = map()
+i = 10
+while i != 0:
+    print(i)
+    time.sleep(1)
+    i -= 1
+print("Время вышло!")
