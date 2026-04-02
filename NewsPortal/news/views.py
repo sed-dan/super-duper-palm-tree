@@ -40,13 +40,12 @@ class PostCreateView(PermissionRequiredMixin,CreateView):
         return create_or_edit(context, self.request.path)
 
     def form_valid(self, form):
+        post = form.save(commit=False)
+        post.post_author = self.request.user.author
         if self.request.path == "/post/news/create/":
-            post = form.save(commit=False)
             post.article_news = "N"
-            return super().form_valid(form)
-        else:
-            post = form.save(commit=True)
-            return super().form_valid(form)
+        post.save()
+        return super().form_valid(form)
 
 
 class PostUpdateView(PermissionRequiredMixin, UpdateView):
