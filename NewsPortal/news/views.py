@@ -2,11 +2,12 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .utils import create_or_edit
-
+from django.contrib.auth.decorators import login_required
 from .forms import PostForm
-from .models import Post
+from .models import Post, Category
 from django_filters.views import FilterView
 from .filters import PostFilter
+from django.shortcuts import redirect
 
 class PostListView(ListView):
     model = Post
@@ -64,3 +65,15 @@ class PostDeleteView(PermissionRequiredMixin, DeleteView):
     template_name = 'news/post_delete.html'
     success_url = reverse_lazy('post_list')
     permission_required = 'news.delete_post'
+
+@login_required
+def subscribe(request, pk):
+    category = Category.objects.get(pk=pk)
+    category.subscribers.add(request.user)
+    return redirect(request.META.get('HTTP_REFERER'))
+
+@login_required
+def unsubscribe(request, pk):
+    category = Category.objects.get(pk=pk)
+    category.subscribers.remove(request.user)
+    return redirect(request.META.get('HTTP_REFERER'))

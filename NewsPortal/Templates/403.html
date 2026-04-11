@@ -6,7 +6,13 @@
 
 
 {% block content %}
+    {% if perms.news.add_post %}
 <div class="container m-5">
-    <h3> Доступ ограничен </h3>
+    <h3> Вы не можете создавать более 3-х публикаций в сутки! </h3>
 </div>
+    {% else %}
+        <div class="container m-5">
+    <h3> Доступ ограничен </h3>
+        </div>
+    {% endif %}
 {% endblock content %}

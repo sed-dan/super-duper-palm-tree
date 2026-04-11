@@ -8,6 +8,15 @@
 
 {% block content %}
 <p style="text-align: right;">{{ post.post_date|date:'d.M.Y' }}</p>
+    {% for cat in post.post_categories.all %}
+        <div style="text-align: left;">Категория: {{ cat }}
+            {% if user in cat.subscribers.all %}
+                <a href="{% url 'unsubscribe' cat.id %}" class="btn btn-outline-danger btn-sm">Отписаться</a>
+            {% else %}
+                <a href="{% url 'subscribe' cat.id %}" class="btn btn-outline-primary btn-sm">Подписаться</a>
+            {% endif %}
+        </div>
+    {% endfor %}
 <div class="container m-5">
     <p><p style="text-align: center;"><em><strong>{{ post.post_header|censor }}</strong></em></p>
     <p>{{ post.post_content|censor }}</p>
