@@ -289,29 +289,28 @@ LOGGING = {
     'loggers': {
         'django': {
             'handlers': ['debug', 'warning', 'error', 'general_log',],
-            'propagate': True,
         },
         'django.request': {
             'handlers': ['errors_log', 'email_error',],
             'level': 'ERROR',
-            'propagate': True,
+            'propagate': False,
         },
         'django.server': {
             'handlers': ['errors_log', 'email_error',],
             'level': 'ERROR',
-            'propagate': True,
+            'propagate': False,
         },
         'django_template': {
             'handlers': ['errors_log',],
-            'propagate': True,
+            'propagate': False,
         },
         'django.db.backends': {
             'handlers': ['errors_log',],
-            'propagate': True,
+            'propagate': False,
         },
         'django.security': {
             'handlers': ['security_log',],
-            'propagate': True,
+            'propagate': False,
         },
     },
 }
