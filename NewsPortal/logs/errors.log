@@ -1,0 +1,26 @@
+2026-04-16 17:44:27,779 ERROR Internal Server Error: /post/category/5/subscribe/ C:\Users\hp\PycharmProjects\SkillProject\.venv\Lib\site-packages\django\utils\log.py (<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x000001A909DC1940>)
+Traceback (most recent call last):
+  File "C:\Users\hp\PycharmProjects\SkillProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\PycharmProjects\SkillProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\PycharmProjects\SkillProject\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hp\PycharmProjects\SkillProject\newsportal\news\views.py", line 73, in subscribe
+    return 1/0
+           ~^~
+ZeroDivisionError: division by zero
+2026-04-16 17:44:27,781 ERROR "GET /post/category/5/subscribe/ HTTP/1.1" 500 76046 C:\Users\hp\PycharmProjects\SkillProject\.venv\Lib\site-packages\django\utils\log.py None
+2026-04-16 18:05:03,033 ERROR Internal Server Error: /post/category/5/unsubscribe/ C:\Users\hp\PycharmProjects\SkillProject\.venv\Lib\site-packages\django\utils\log.py (<class 'ZeroDivisionError'>, ZeroDivisionError('division by zero'), <traceback object at 0x0000023648E48E00>)
+Traceback (most recent call last):
+  File "C:\Users\hp\PycharmProjects\SkillProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\PycharmProjects\SkillProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\PycharmProjects\SkillProject\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hp\PycharmProjects\SkillProject\newsportal\news\views.py", line 79, in unsubscribe
+    return 1/0
+           ~^~
+ZeroDivisionError: division by zero
+2026-04-16 18:05:03,037 ERROR "GET /post/category/5/unsubscribe/ HTTP/1.1" 500 75288 C:\Users\hp\PycharmProjects\SkillProject\.venv\Lib\site-packages\django\utils\log.py None

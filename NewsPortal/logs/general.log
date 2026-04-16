@@ -1,0 +1,19 @@
+2026-04-16 18:00:24,630 INFO autoreload Watching for file changes with StatReloader
+2026-04-16 18:04:04,928 INFO autoreload C:\Users\hp\PycharmProjects\SkillProject\NewsPortal\news\views.py changed, reloading.
+2026-04-16 18:04:06,337 INFO autoreload Watching for file changes with StatReloader
+2026-04-16 18:05:03,033 ERROR log Internal Server Error: /post/category/5/unsubscribe/
+Traceback (most recent call last):
+  File "C:\Users\hp\PycharmProjects\SkillProject\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\PycharmProjects\SkillProject\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\PycharmProjects\SkillProject\.venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hp\PycharmProjects\SkillProject\newsportal\news\views.py", line 79, in unsubscribe
+    return 1/0
+           ~^~
+ZeroDivisionError: division by zero
+2026-04-16 18:05:03,037 ERROR log "GET /post/category/5/unsubscribe/ HTTP/1.1" 500 75288
+2026-04-16 18:06:38,670 INFO autoreload C:\Users\hp\PycharmProjects\SkillProject\NewsPortal\news\views.py changed, reloading.
+2026-04-16 18:06:39,521 INFO autoreload Watching for file changes with StatReloader
+2026-04-16 18:08:58,199 INFO autoreload C:\Users\hp\PycharmProjects\SkillProject\NewsPortal\news\views.py changed, reloading.
